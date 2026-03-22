@@ -1,6 +1,6 @@
 {
   "license": "MIT",
-  "author": "",
+  "author": "rickytan",
   "name": "@rickytan/openssl",
   "description": "OpenSSL for OpenHarmony/HarmonyNext",
   "main": "index.ets",
