@@ -1,4 +1,5 @@
 #!/bin/sh
+export OHOS_NDK_HOME=/Applications/DevEco-Studio.app/Contents/sdk/default/openharmony
 
 patch_file="${PWD}/patchs/openssl.patch"
 

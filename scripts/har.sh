@@ -11,25 +11,20 @@ cd $parent_dir
 rm -rf ./package/prelude/
 export COPYFILE_DISABLE=true
 
-mkdir -p ./package/prelude/arm64-v8a/lib
-cp -r ./prelude/arm64-v8a/include ./package/prelude/arm64-v8a/
-cp ./prelude/arm64-v8a/lib/libcrypto.a ./package/prelude/arm64-v8a/lib/libcrypto.a
-cp ./prelude/arm64-v8a/lib/libcrypto.so ./package/prelude/arm64-v8a/lib/libcrypto.so
-cp ./prelude/arm64-v8a/lib/libssl.a ./package/prelude/arm64-v8a/lib/libssl.a
-cp ./prelude/arm64-v8a/lib/libssl.so ./package/prelude/arm64-v8a/lib/libssl.so
+archs=(arm64-v8a armeabi-v7a x86_64)
 
-mkdir -p ./package/prelude/armeabi-v7a/lib
-cp -r ./prelude/armeabi-v7a/include ./package/prelude/armeabi-v7a
-cp ./prelude/armeabi-v7a/lib/libcrypto.a ./package/prelude/armeabi-v7a/lib/libcrypto.a
-cp ./prelude/armeabi-v7a/lib/libcrypto.so ./package/prelude/armeabi-v7a/lib/libcrypto.so
-cp ./prelude/armeabi-v7a/lib/libssl.a ./package/prelude/armeabi-v7a/lib/libssl.a
-cp ./prelude/armeabi-v7a/lib/libssl.so ./package/prelude/armeabi-v7a/lib/libssl.so
+cp -r "./prelude/arm64-v8a/include" "./package/"
+cp -r "./prelude/arm64-v8a/lib/cmake" "./package/"
 
-mkdir -p ./package/prelude/x86_64/lib/
-cp -r ./prelude/x86_64/include ./package/prelude/x86_64/
-cp ./prelude/x86_64/lib/libcrypto.a ./package/prelude/x86_64/lib/libcrypto.a
-cp ./prelude/x86_64/lib/libcrypto.so ./package/prelude/x86_64/lib/libcrypto.so
-cp ./prelude/x86_64/lib/libssl.a ./package/prelude/x86_64/lib/libssl.a
-cp ./prelude/x86_64/lib/libssl.so ./package/prelude/x86_64/lib/libssl.so
+for arch in "${archs[@]}"; do
+  src="./prelude/${arch}"
+  dst="./package/libs/${arch}"
+
+  mkdir -p "${dst}"
+  cp "${src}/lib/libcrypto.a" "${dst}/libcrypto.a"
+  cp "${src}/lib/libcrypto.so" "${dst}/libcrypto.so"
+  cp "${src}/lib/libssl.a" "${dst}/libssl.a"
+  cp "${src}/lib/libssl.so" "${dst}/libssl.so"
+done
 
 tar -zcvf package.har package/

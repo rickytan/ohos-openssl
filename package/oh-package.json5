@@ -1,10 +1,38 @@
 {
-  license: "MIT",
-  author: "richerfu",
-  name: "@ohos-rs/openssl",
-  description: "OpenSSL for OpenHarmony/HarmonyNext",
-  main: "index.ets",
-  version: "0.0.1",
-  types: "libs/index.d.ts",
-  dependencies: {}
+  "license": "MIT",
+  "author": "",
+  "name": "@rickytan/openssl",
+  "description": "OpenSSL for OpenHarmony/HarmonyNext",
+  "main": "index.ets",
+  "version": "3.6.1",
+  "types": "libs/index.d.ts",
+  "dependencies": {},
+  "artifactType": "obfuscation",
+  "metadata": {
+    "byteCodeHar": true,
+    "sourceRoots": [
+      "./src/main"
+    ],
+    "dependencyPkgVersion": {},
+    "declarationEntry": [],
+    "nativeDebugSymbol": true,
+    "useNormalizedOHMUrl": true
+  },
+  "compatibleSdkVersion": 15,
+  "compatibleSdkType": "HarmonyOS",
+  "obfuscated": false,
+  "nativeComponents": [
+    {
+      "name": "libssl.so",
+      "compatibleSdkVersion": 15,
+      "compatibleSdkType": "HarmonyOS",
+      "linkLibraries": []
+    },
+    {
+      "name": "libcrypto.so",
+      "compatibleSdkVersion": 15,
+      "compatibleSdkType": "HarmonyOS",
+      "linkLibraries": []
+    }
+  ]
 }
