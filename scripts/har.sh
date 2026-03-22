@@ -30,4 +30,4 @@ for arch in "${archs[@]}"; do
   cp "${src}/lib/libssl.so" "${dst}/libssl.so"
 done
 
-tar -zcvf package.har package/
+tar -zcvf openssl.har package/

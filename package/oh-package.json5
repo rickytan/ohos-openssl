@@ -5,9 +5,7 @@
   "description": "OpenSSL for OpenHarmony/HarmonyNext",
   "main": "index.ets",
   "version": "3.6.1",
-  "types": "libs/index.d.ts",
   "dependencies": {},
-  "artifactType": "obfuscation",
   "metadata": {
     "byteCodeHar": true,
     "sourceRoots": [
