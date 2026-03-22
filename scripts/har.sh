@@ -8,7 +8,10 @@ parent_dir=$(dirname "$script_dir")
 
 cd $parent_dir
 
-rm -rf ./package/prelude/
+rm -rf ./package/include/
+rm -rf ./package/libs/
+rm -rf ./package/cmake/
+
 export COPYFILE_DISABLE=true
 
 archs=(arm64-v8a armeabi-v7a x86_64)
